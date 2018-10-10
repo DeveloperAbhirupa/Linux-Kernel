@@ -12,3 +12,8 @@ start.asm
 ---------
 
 It is the kernel's entry point. It will be executed FIRST when the bootloader invokes the kernel. This file loads a new 8KByte stack, and then jump into an infinite loop. The stack is a small amount of memory, but it's used to store or pass arguments to functions in C. It's also used to hold local variables that we declare and use inside our functions. Any other global variables are stored in the data and BSS sections. The lines between the 'mboot' and 'stublet' blocks make up a special signature that GRUB uses to verify that the output binary that it's going to load is, infact, a kernel.
+
+linker.ld
+---------
+It takes all of our compiler and assembler output files and links them together into one binary file.
+'Text' or 'Code' is the executable itself. The 'Data' section is for hardcoded values in your code, such as when you declare a variable and set it to 5. The value of 5 would get stored in the 'Data' section. The last section is called the 'BSS' section. The 'BSS' consists of uninitialized data; it stores any arrays that you have not set any values to.
