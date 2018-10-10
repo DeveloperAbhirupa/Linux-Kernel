@@ -16,4 +16,4 @@ It is the kernel's entry point. It will be executed FIRST when the bootloader in
 linker.ld
 ---------
 It takes all of our compiler and assembler output files and links them together into one binary file.
-'Text' or 'Code' is the executable itself. The 'Data' section is for hardcoded values in your code, such as when you declare a variable and set it to 5. The value of 5 would get stored in the 'Data' section. The last section is called the 'BSS' section. The 'BSS' consists of uninitialized data; it stores any arrays that you have not set any values to.
+'Text' or 'Code' is the executable itself. The 'Data' section is for hardcoded values in our code. The last section is called the 'BSS' section. The 'BSS' consists of uninitialized data; it stores any arrays that you have not set any values to.
