@@ -1,7 +1,6 @@
-; This is the kernel's entry point. We could either call main here,
-; or we can use this to setup the stack or other nice stuff, like
-; perhaps setting up the GDT and segments. Please note that interrupts
-; are disabled at this point: More on interrupts later!
+; This is the kernel's entry point.
+; Interrupts are disabled at this point: More on interrupts later!
+
 [BITS 32]
 global start
 start:
@@ -33,9 +32,10 @@ mboot:
     dd end
     dd start
 
-; This is an endless loop here. Make a note of this: Later on, we
-; will insert an 'extern _main', followed by 'call _main', right
+; This is an endless loop here.
+; We will insert an 'extern _main', followed by 'call _main', right
 ; before the 'jmp $'.
+
 stublet:
     jmp $
 
@@ -43,8 +43,7 @@ stublet:
 ; Shortly we will add code for loading the GDT right here!
 
 
-; In just a few pages in this tutorial, we will add our Interrupt
-; Service Routines (ISRs) right here!
+;Interrupt Service Routines (ISRs) right here!
 
 
 
